@@ -1,0 +1,42 @@
+[
+  {
+    "id": "q1",
+    "category": "fact_lookup",
+    "question": "什么是 AI Agent？"
+  },
+  {
+    "id": "q2",
+    "category": "fact_lookup",
+    "question": "什么是 retrieval-augmented generation？"
+  },
+  {
+    "id": "q3",
+    "category": "fact_lookup",
+    "question": "什么是 ReAct？"
+  },
+  {
+    "id": "q4",
+    "category": "method_comparison",
+    "question": "ReAct 和普通聊天式问答有什么区别？"
+  },
+  {
+    "id": "q5",
+    "category": "method_comparison",
+    "question": "LangGraph 和直接写单轮 prompt 有什么区别？"
+  },
+  {
+    "id": "q6",
+    "category": "trend_review",
+    "question": "为什么研究型 Agent 需要 grounding？"
+  },
+  {
+    "id": "q7",
+    "category": "trend_review",
+    "question": "为什么固定评测题集对 Agent 研究重要？"
+  },
+  {
+    "id": "q8",
+    "category": "trend_review",
+    "question": "Agent 研究的未来趋势是什么？"
+  }
+]
