@@ -38,5 +38,15 @@
     "id": "q8",
     "category": "trend_review",
     "question": "Agent 研究的未来趋势是什么？"
+  },
+  {
+    "id": "q9",
+    "category": "method_comparison",
+    "question": "LangGraph 和 ReAct 有什么区别？"
+  },
+  {
+    "id": "q10",
+    "category": "Critical Thinking",
+    "question": "生成式智能体只是一个套壳大语言模型，根本不是未来。"
   }
 ]

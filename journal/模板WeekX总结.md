@@ -3,6 +3,7 @@ template_version: 3
 doc_type: week_summary
 ssot_role: week_summary
 week: "Week X"
+milestone: ""
 goal_ids:
   - G1
   - G2
@@ -71,12 +72,23 @@ evidence_type_vocab:
 - 下一周第一步：
 - 哪些旧问题这周已经决定先不重开：
 
+## 路线图验收
+<!-- 从 HTML DATA.weeks[N] 提取，逐项核对 -->
+- [ ] task 完成了吗：
+- [ ] minimum_bar 达到了吗：
+- [ ] output 留下了吗：
+- [ ] paper_memo.md 本周有追加吗：
+- [ ] 至少 1 次科研训练完成了吗：
+- [ ] 本周证据清单齐了吗：
+- 路线图 exit_criteria 对照（如本周是 milestone 末尾周）：<!-- M1: 伪造引用率 < 30%；M2: 重复推荐率降低 ≥ 50%；M5: unsafe action rate < 20%, over-refusal < 15% -->
+
 ## 最低完成线
 - 写出 1 条 `一句话结论`。
 - 对照至少 1 个 `G#`，并写出 `状态` 与 `证据引用`。
 - 留下 1 条 `证据`。
 - 留下 1 条 `失败沉淀`，如果本周没有，就明确写“本周无值得沉淀的失败”。
 - 写出 1 条 `承接点`。
+- `路线图验收` 的 6 个 checkbox 已逐项核对（含 paper_memo.md）。
 
 ## 自由补充 [可选]
 - 这里可以像周记一样写判断、感受和想法，不必强行资产化。

@@ -4,7 +4,8 @@ doc_type: day_log
 ssot_role: daily_execution
 week: "Week X"
 day: "Day X"
-date: ""
+date: "2026-0X-XX"
+milestone: ""
 related_goal_ids:
   - G1
 research_output_type: ""
@@ -34,18 +35,21 @@ evidence_type_vocab:
 # Week X Day X
 
 > 写法像日志；只在少数地方保留系统接口：`G#`、`证据`、`失败沉淀`、`承接点`。
+> 路线图参照：从 HTML `DATA.weeks[N]` 提取本周 `goal`/`task`/`must_do`/`minimum_bar`，确保今日动作服务于这些字段。
+> 注意：`docs/paper_memo.md` 是累积文档，从 W1 开始每周追加；`output` 字段随周次不同（如 W1 不含 graph.py，W2 才出现 graph.py）。
 
 ## 事前
 - 今天承接点：
 - 今天主要服务的目标：G1 / G2 / G3
 - 一句话今天要把什么推到哪里：
-- 今天完成线：（可以4-7个任务块，工作时长不低于5小时）
+- 今天完成线：（4-7 个任务块，工作时长不低于 5 小时）
+- 路线图 minimum_bar 还差：<!-- 从 HTML 的 minimum_bar 字段判断 -->
 
 ### 任务块 1 ⟨必须⟩（深度，45-90 min）
 - 关联 G#：
 - 动作：<!-- 具体到第一步做什么 -->
 - 完成线：<!-- 直接对应周规划的验收标准，不要重新发明 -->
-- 产出：<!-- 预期产出的文件名或命令 -->
+- 产出：<!-- 预期产出的文件名或命令；如涉及文献，追加到 docs/paper_memo.md -->
 - 必读资源：<!-- 名称（原因：） -->
 - 科研训练标签：`#对比实验` / `#失败记录` / `#prompt日志` / `#related-work` / `#问题表述`
 
@@ -87,6 +91,7 @@ evidence_type_vocab:
 - 目标状态：`G1=已完成 / 部分完成 / 未完成 / 阻塞`
 - 今天实际推进了什么：
 - 还卡在哪里：
+- 路线图 minimum_bar 进展：<!-- 今天是否缩小了与 minimum_bar 的差距 -->
 
 ## 明日衔接
 - 明日目标：
