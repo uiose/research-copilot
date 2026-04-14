@@ -22,22 +22,26 @@
 
 ## Current Status
 
-当前处于 `Week 1` baseline 阶段。
+当前处于 `Week 1` 收尾 → `Week 2` 过渡阶段。项目采用 **双轨并行** 策略（工程轨 60% + 研究轨 40%）。
 
-已完成：
+**工程轨已完成：**
 - 项目基础目录搭建
 - `run.py` 最小程序入口
-- 固定评测题集 [data/eval_questions.json](data/eval_questions.json)
+- 固定评测题集 [data/eval_questions.json](data/eval_questions.json)（10 题）
 - 题集字段校验
 - 结构化 JSON 输出
+- 大语言模型接入（GitHub Models API）
 - 项目定义与 journal 记录机制
 
-暂未完成：
-- 大语言模型接入
-- LangGraph 接入
-- 文献检索工具接入
-- 自动评测流程
-- 长期记忆与向量数据库
+**研究轨已完成：**
+- [docs/paper_memo.md](docs/paper_memo.md) 问题定义（0.5 页）
+- 5 篇相关论文的阅读记录
+
+**即将推进（Week 2）：**
+- LangGraph 最小图接入
+- arXiv / Semantic Scholar 检索工具
+- A/B 对比实验（有工具 vs 无工具）
+- 继续论文阅读（目标累计 8-10 篇）
 
 ## Roadmap
 
@@ -115,9 +119,10 @@ python run.py
 ## Documentation
 
 - [docs/project_definition.md](docs/project_definition.md)：按周维护的阶段性项目定义
+- [docs/paper_memo.md](docs/paper_memo.md)：论文备忘录——问题定义、相关工作、研究问题、实验记录
 - [journal/](journal/)：按天维护的工作记录与复盘
 - [data/eval_questions.json](data/eval_questions.json)：固定评测题集
-- [ai_agent_research_12week_workbench_2026-V4.html](ai_agent_research_12week_workbench_2026-V4.html)：12 周学习路线与研究工作台，用于查看每周目标、阶段任务与建议产出
+- [ai_agent_research_12week_workbench_2026-V4.html](ai_agent_research_12week_workbench_2026-V4.html)：12 周学习路线与研究工作台
 
 ## Agent Roles
 
@@ -151,7 +156,8 @@ python run.py
 
 ## Next Step
 
-下一步将推进：
-- 最小大语言模型接入
-- baseline 输入输出进一步稳定
-- 为 Week 2 的 LangGraph 与检索流程做准备
+下一步将推进（Week 2）：
+- 引入 LangGraph 最小图（`graph.py`）
+- 接入 arXiv / Semantic Scholar 检索工具
+- 完成 A/B 对比实验（有工具 vs 无工具），结果记录到 `docs/paper_memo.md`
+- 继续阅读论文，累计 8-10 篇
