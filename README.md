@@ -125,7 +125,7 @@ python run.py
 
 - `Learning Diagnosis Planner`：做进度诊断与按天计划重排
 - `Status Evaluator`：做状态验收与完成判断，默认先看当前周，再补一句整体状态
-- `Learning Coach`：做概念引导、资源推荐与任务陪跑
+- `Learning Coach`：做概念引导、回答错漏诊断、资源推荐与任务陪跑
 - `Code Review Coach`：做代码审查与改进建议
 - 默认 agent：负责实际编码、改文件和运行命令
 
