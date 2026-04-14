@@ -34,6 +34,12 @@ Research Copilot：面向初级研究者的 AI Agent 原型。12 周路线图迭
 - 科研训练标签：`#对比实验` / `#失败记录` / `#prompt日志` / `#related-work` / `#问题表述`
 - 证据格式：`[G#][类型] 描述`
 
+## 状态判断证据优先级
+- 状态判断时，最终以工程文件、仓库产物与可复核证据为准
+- `journal/` 只作为辅助线索，不作为最终完成判定依据
+- 若日志自述与工程现实冲突，优先相信代码、数据、测试、输出与可验证结果
+- 占位文件不等于功能完成；计划、意图和 Todo 不等于交付完成
+
 ## Agent 协作体系
 
 ### 定制文件总览
@@ -42,6 +48,7 @@ Research Copilot：面向初级研究者的 AI Agent 原型。12 周路线图迭
 ├── copilot-instructions.md          ← 全局指令（本文件），所有对话自动加载
 ├── agents/
 │   ├── learning-diagnosis-planner.agent.md   ← 规划者（读写）
+│   ├── status-evaluator.agent.md             ← 状态验收官（只读）
 │   ├── learning-coach.agent.md               ← 学习教练（只读）
 │   └── code-review-coach.agent.md            ← 代码教练（只读）
 └── instructions/
@@ -53,6 +60,7 @@ Research Copilot：面向初级研究者的 AI Agent 原型。12 周路线图迭
 | Agent | 一句话职责 | 读写 | 什么时候用 | 不要用来做 |
 |---|---|---|---|---|
 | **Learning Diagnosis Planner** | 诊断进度 → 生成按天计划 | 读写 | 周初规划、周中重排、卡住需要重新拆计划 | 问概念、要资源、review 代码 |
+| **Status Evaluator** | 对照路线图与工程证据判断真实完成状态 | 只读 | 周中核查进度、周末验收、确认 minimum_bar / output / exit_criteria 是否真正落地 | 生成新计划、改代码、只凭日志判定完成 |
 | **Learning Coach** | 概念引导 + 资源推荐 + 任务逐步陪跑 | 只读 | 不懂某个概念、想要学习资源、需要有人引导思考、做任务时逐步引导 | 生成计划、改代码、跑命令 |
 | **Code Review Coach** | 指出问题 → 解释原因 → 引导改进 | 只读 | 写完代码想要反馈、不确定设计是否合理 | 直接帮你写代码、生成计划 |
 | *（默认 agent）* | 写代码、改文件、跑命令 | 读写 | 实际编码、文件修改、终端操作、一般问答 | — |
@@ -61,9 +69,10 @@ Research Copilot：面向初级研究者的 AI Agent 原型。12 周路线图迭
 
 ```
 1. 周初/卡住 → @Learning Diagnosis Planner 诊断并出计划
-2. 学习过程中不懂 → @Learning Coach 引导理解 + 推荐资源
-3. 写完代码 → @Code Review Coach 审查反馈
-4. 动手改代码 → 默认 agent 执行
+2. 周中核查/周末验收 → @Status Evaluator 判断真实完成情况
+3. 学习过程中不懂 → @Learning Coach 引导理解 + 推荐资源
+4. 写完代码 → @Code Review Coach 审查反馈
+5. 动手改代码 → 默认 agent 执行
 ```
 
 ### Prompt 示例
@@ -77,6 +86,17 @@ Research Copilot：面向初级研究者的 AI Agent 原型。12 周路线图迭
 ```
 ```
 这周只剩 3 天，每天大概 4 小时，帮我出一个压缩版计划
+```
+
+**@Status Evaluator** — 状态验收与完成判断
+```
+帮我判断当前 Week 1 的真实完成情况，按状态矩阵输出，并指出日志和工程文件是否一致
+```
+```
+检查一下本周 minimum_bar 和 output 有没有真正落到仓库里，不要只看 journal
+```
+```
+请按 milestone 验收视角看当前状态：哪些是已完成，哪些只是占位，哪些还缺证据
 ```
 
 **@Learning Coach** — 概念引导
@@ -126,4 +146,5 @@ graph.py 的状态设计有没有问题？
 ### 边界红线
 - Learning Coach 和 Code Review Coach **绝不修改文件**，只提供引导
 - Learning Diagnosis Planner 只写 journal 和 memory，不改项目代码
+- Status Evaluator **绝不修改文件**，只做状态判断；且必须以工程产物为准，不得仅凭 journal 认定完成
 - 需要实际编码时，回到默认 agent

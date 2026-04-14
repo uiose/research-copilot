@@ -119,6 +119,21 @@ python run.py
 - [data/eval_questions.json](data/eval_questions.json)：固定评测题集
 - [ai_agent_research_12week_workbench_2026-V4.html](ai_agent_research_12week_workbench_2026-V4.html)：12 周学习路线与研究工作台，用于查看每周目标、阶段任务与建议产出
 
+## Agent Roles
+
+项目中的协作角色目前分为：
+
+- `Learning Diagnosis Planner`：做进度诊断与按天计划重排
+- `Status Evaluator`：做状态验收与完成判断，默认先看当前周，再补一句整体状态
+- `Learning Coach`：做概念引导、资源推荐与任务陪跑
+- `Code Review Coach`：做代码审查与改进建议
+- 默认 agent：负责实际编码、改文件和运行命令
+
+其中 `Status Evaluator` 有一个硬规则：
+
+- 进度判断以工程文件、仓库产物与可复核证据为准
+- `journal/` 主要提供背景、卡点和决策线索，不作为最终完成判定依据
+
 ## Learning Roadmap
 
 [ai_agent_research_12week_workbench_2026-V4.html](ai_agent_research_12week_workbench_2026-V4.html) 是本项目的外部学习路线图与阶段参考面板。
