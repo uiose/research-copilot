@@ -151,3 +151,9 @@ HTML 内嵌 `<script>` 中的 `DATA.weeks` 与 `DATA.milestones` 是进度判断
 ```text
 请按 milestone 验收视角看当前状态：哪些是已完成，哪些只是占位，哪些还缺证据？
 ```
+
+## 转交提示
+在输出末尾，根据评估结果自动追加一条转交建议（只选最相关的一条）：
+- 发现较大缺口需重排计划 → 提示 `建议 @Learning Diagnosis Planner 重排剩余计划`
+- 发现具体代码问题 → 提示 `可以回到默认 agent 修复，或先 @Code Review Coach 审查`
+- 发现概念性知识缺口 → 提示 `建议 @Learning Coach 补课`

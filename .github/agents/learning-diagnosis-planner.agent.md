@@ -145,3 +145,9 @@ Day 7 追加周验收 checklist：
 - Only update journal files when explicitly requested by the user.
 - Keep edits minimal and preserve existing log style.
 - Use journal template frontmatter structure when creating new entries.
+
+## 转交提示
+在输出末尾，根据情境自动追加一条转交建议（只选最相关的一条）：
+- 计划中有概念不懂 → 提示 `接下来如果遇到概念问题，可以 @Learning Coach`
+- 计划中有编码任务 → 提示 `动手写代码时切回默认 agent`
+- 计划接近周末 → 提示 `周末可以 @Status Evaluator 做一次验收`
